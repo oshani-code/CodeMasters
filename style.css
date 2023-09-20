@@ -1,0 +1,57 @@
+body {
+    background:linear-gradient(100deg, #4e65ff,#92effd);
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1{
+    padding-top: 25px;
+    font-size: 60px;
+    background: -webkit-linear-gradient(#c33764,#1d2671);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:transparent;
+
+}
+
+.user-form {
+    margin: 20px;
+}
+
+.user-form input {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.user-list {
+    margin-top: 30px;
+}
+
+.user-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.user-list li {
+    margin: 5px;
+}
+
+.btn{
+display: inline-block;
+background: #ff523b;
+color:#fff;
+padding: 8px 30px;
+margin: 30px 0;
+border: none;
+border-radius:30px;
+transition: background 0.5s;
+}
+
+.btn:hover{
+background: #563434;
+}
+
+@media only screen and (max-width: 600px){
+    body{
+        background: lightgreen;
+    }
+}
