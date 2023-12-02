@@ -1,239 +1,57 @@
-
-body{
-   margin: 0;
-   padding: 0;
-   display: flex;
-   overflow: hidden;
-   animation: gradientAnimation 10s linear infinite;
+body {
+    background:linear-gradient(100deg, #4e65ff,#92effd);
+    font-family: Arial, sans-serif;
+    text-align: center;
 }
 
 h1{
-    margin:45px 0px;
-    text-transform: uppercase;
-    color:rgb(117, 4, 4);
-    text-align: center;
-}
-
-/*---------shortenerForm----------*/
-
-#shortenerForm{
-    font-size: 17px;
-    font-weight: 400;
-    text-align: center;
-    color:#000;
-}
-
-/*---------input------------*/
-
-input{
-    height:20px;
-    border: 0;
-    border-radius: 3px;
-    color:#000;
-}
-
-input:hover{
-    background:linear-gradient(120deg,#cbfcaa,#9af5f5);
+    padding-top: 25px;
+    font-size: 60px;
+    background: -webkit-linear-gradient(#c33764,#1d2671);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:transparent;
 
 }
 
-/*---------button-----------*/
-
-button{
-    padding:7px;
-    border: 0;
-    margin:0px 0px 0px 8px;
-    font-size: 12px;
-    font-weight: 600;
-    border-radius: 13px;
-    background :linear-gradient( rgb(7, 212, 185), #fff, rgb(250, 233, 83));
+.user-form {
+    margin: 20px;
 }
 
-button:hover{
-    
-    transform: scaleX(10px);
-    background: linear-gradient(rgb(50, 205, 197),rgb(182, 228, 98));
+.user-form input {
+    padding: 5px;
+    margin-right: 10px;
 }
 
-/*-------<p> tag of Shortened URL:---------*/
-
-p{
-    font-size: 25px;
-    font-weight: 600;
-    color: #000;
-    
+.user-list {
+    margin-top: 30px;
 }
 
-/*---------------------gradient-background-----------------*/
-
-.gradient-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background:repeating-linear-gradient(120deg,rgb(208, 122, 248),rgb(247, 125, 181),rgb(55, 243, 243),#20e3b2,#06beb6,#f2fcfe);
-    background-size: 500% 500%; /* Control the speed of the animation */
-    animation: gradientMove 10s linear infinite;
+.user-list ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-/*--------------Keyframes of gradient-background---------------*/
+.user-list li {
+    margin: 5px;
+}
 
-@keyframes gradientMove {
-    0% {
-        background-position: 0% 0%;
-    }
-    100% {
-        background-position: 100% 100%;
+.btn{
+display: inline-block;
+background: #ff523b;
+color:#fff;
+padding: 8px 30px;
+margin: 30px 0;
+border: none;
+border-radius:30px;
+transition: background 0.5s;
+}
+
+.btn:hover{
+background: #563434;
+}
+
+@media only screen and (max-width: 600px){
+    body{
+        background:lightgreen;
     }
 }
-
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 0%;
-    }
-    100% {
-        background-position: 400% 400%;
-    }
-}
-
-/*-------------media query for mobile devices-------------*/
-
-/* Mobile-sized screens (up to 767px) */
-@media (max-width: 767px) {
-    body {
-        background-color: #fff;
-        /* Adjust other styles for mobile devices here */
-    }
-}
-
-/* -----------------------bubble code--------------------*/
-
-.bubbles{
-    width:100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    position: absolute;
-    bottom: 0;
-    animation-name: bounce;
-    animation: duration 0.5s;
-    animation:bubbles 2s ease-in infinite alternate-reverse;
-    
-}
-
-/*-------------bubbles-animation-image-----------*/
-
-.bubbles img{
-    width:50px;
-    animation-name: bounce;
-    animation-duration: 0.5s;
-    animation: bubbles 2s ease-in infinite alternate-reverse;
-    
-}
-
-/*----------------bubble translateY----------------*/
-
-@keyframes bubbles{
-
-    0%{
-        transform:translateY(5);
-        opacity: 0;
-    }
-    
-    10%{
-        transform: translateY(10);
-        opacity: 1.2;
-    }    
-    
-    25%{
-        transform: translateY(15);
-        opacity: 1.8;
-    }
-
-    35%{
-        transform: translateY(-20);
-        opacity: 0;
-    }
-
-    45%{
-        transform: translateY(30);
-        opacity: 1.6;
-    }
-
-    55%{
-        transform: translateY(50);
-        opacity:0;
-    }
-
-    75%{
-        transform: translateY(75);
-        opacity: 1;
-    }
-
-    100%{
-        transform: translateY(-80vh);
-        opacity: 0;
-    }
-}
-
-/*--------------bubble-image------------*/
-
-.bubbles img:nth-child(1)
-{
-    animation-delay: 1s;
-    width:25px;
-}
-
-.bubbles img:nth-child(1)
-{
-    animation-delay: 1s;
-    width:25px;
-}
-
-.bubbles img:nth-child(1)
-{
-    animation-delay: 1s;
-    width:25px;
-}
-
-.bubbles img:nth-child(1)
-{
-    animation-delay: 1s;
-    width:25px;
-}
-
-.bubbles img:nth-child(1)
-{
-    animation-delay: 1s;
-    width:25px;
-}
-
-.bubbles img:nth-child(1)
-{
-    animation-delay: 1s;
-    width:25px;
-}
-
-/*--------------bubble bounce-----------------*/
-
-@keyframes bounce{
-    0% {
-      top: 0px;
-    }
-
-    25%{
-        top:30px;
-    }
-       
-    50% {
-      top: 249px;
-      width: 130px;
-      height: 100px;
-    }
-
-    100% {
-      top: 0px;
-    }
-  }
-
