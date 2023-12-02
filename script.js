@@ -1,16 +1,39 @@
+// Sample user data storage
+let users = [];
 
-document.getElementById("shortenerForm").addEventListener("submit", function (event) {
-    event.preventDefault();
-    const originalURL = document.getElementById("originalURL").value;
-    const shortURL = shortenURL(originalURL);
-    document.getElementById("shortURL").textContent = shortURL;
-    document.getElementById("shortURL").href = shortURL;
-    document.getElementById("shortenedLink").style.display = "block";
-});
+// Function to add a new user
+function addUser() {
+    const username = document.getElementById("username").value;
+    const email = document.getElementById("email").value;
 
-function shortenURL(originalURL) {
-    // In a real implementation, you would use a server-side script to generate a short URL.
-    // For simplicity, we'll use a random number here.
-    const shortCode = Math.random().toString(36).substring(2, 8);
-    return `https://yourdomain.com/${shortCode}`;
+    if (username && email) {
+        const newUser = {
+            username,
+            email
+        };
+
+        users.push(newUser);
+
+        // Clear input fields
+        document.getElementById("username").value = "";
+        document.getElementById("email").value = "";
+
+        // Update the user list
+        updateUserList();
+    }
 }
+
+// Function to update the user list
+function updateUserList() {
+    const userList = document.getElementById("user-list");
+    userList.innerHTML = "";
+
+    users.forEach(user => {
+        const li = document.createElement("li");
+        li.textContent = `Username: ${user.username}, Email: ${user.email}`;
+        userList.appendChild(li);
+    });
+}
+
+// Event listener for the "Add User" button
+document.getElementById("add-user").addEventListener("click", addUser);
